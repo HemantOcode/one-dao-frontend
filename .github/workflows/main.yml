@@ -9,19 +9,18 @@ jobs:
   deploy:
     name: Build, Push, & Deploy to ECS
     runs-on: ubuntu-latest
-    
+
     permissions:
-      id-token: write  # Allows the job to fetch the OIDC token
-      contents: read   # Allows checkout
-      
+      id-token: write # Allows the job to fetch the OIDC token
+      contents: read # Allows checkout
+
     # Environment variables for easy configuration
     env:
       AWS_REGION: ap-south-1 # Your specific AWS Region
-      ECR_REPOSITORY: my-app-repo
-      ECS_CLUSTER: my-app-cluster
-      ECS_SERVICE: my-app-service
-      ECS_TASK_DEFINITION_PATH: task-definition.json # Path to your task definition file
-      ECS_CONTAINER_NAME: my-app-container # Must match the container name in task-definition.json
+      ECR_REPOSITORY: consectus/one-dao
+      ECS_CLUSTER: one-dao-cluster
+      ECS_SERVICE: one-daoService
+      ECS_CONTAINER_NAME: one-dao-cntr # Must match the container name in task-definition.json
 
     steps:
       - name: Checkout Code
@@ -48,10 +47,10 @@ jobs:
         run: |
           # Build the Docker image
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          
+
           # Push the image to ECR
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          
+
           # Output the full image URI for the next step
           echo "IMAGE_URI=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
 
