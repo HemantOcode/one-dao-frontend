@@ -4,6 +4,10 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
+
+    "executionRoleArn": "arn:aws:iam::973530737784:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::973530737784:role/ecsTaskExecutionRole",
+  
   "containerDefinitions": [
     {
       "name": "one-dao-cntr",
