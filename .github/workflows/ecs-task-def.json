@@ -7,7 +7,6 @@
   "containerDefinitions": [
     {
       "name": "one-dao-cntr",
-      "family":"one-dao",
       "image": "PLACEHOLDER_IMAGE",
       "essential": true,
       "portMappings": [
