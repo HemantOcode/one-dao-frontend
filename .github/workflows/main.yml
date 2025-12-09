@@ -21,7 +21,7 @@ jobs:
       ECS_CLUSTER: one-dao-cluster
       ECS_SERVICE: one-daoService
       ECS_CONTAINER_NAME: one-dao-cntr # Must match the container name in task-definition.json
-      ECS_TASK_DEFINITION_PATH: "./ecs-task-def.json"
+      ECS_TASK_DEFINITION_PATH: ".github/workflows/ecs-task-def.json"
 
     steps:
       - name: Checkout Code
