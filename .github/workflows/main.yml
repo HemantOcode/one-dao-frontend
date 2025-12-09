@@ -17,7 +17,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::973530737784:role/github-oidc-role
-          aws-region: ${{ vars.AWS_REGION }}
+          aws-region: ap-south-1
           audience: sts.amazonaws.com
           output-env-credentials: true
 
