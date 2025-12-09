@@ -18,7 +18,6 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::973530737784:role/github-oidc-role
           aws-region: ap-south-1
-          audience: sts.amazonaws.com
           output-env-credentials: true
 
       - name: Login to Amazon ECR
